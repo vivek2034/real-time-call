@@ -83,6 +83,14 @@ To start the production server:
 npm start
 ```
 
+### Deploying to Render / Railway / Cloud
+
+When configuring a Web Service on platforms like **Render**:
+- **Build Command**: `npm install && npm run build` (or `bun install && bun run build`)
+- **Start Command**: `npm start` (or `bun run start`)
+
+> *Note: If the platform defaults the build step to just `bun install` / `npm install`, the `start` script will automatically detect the missing `dist/server.cjs` and run the build step on the fly.*
+
 ---
 
 ## How It Works
