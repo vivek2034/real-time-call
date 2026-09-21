@@ -397,6 +397,17 @@ async function startServer() {
   server.listen(PORT, '0.0.0.0', () => {
     console.log(`Audio call server running on http://0.0.0.0:${PORT}`);
   });
+
+  const shutdown = () => {
+    server.close(() => {
+      process.exit(0);
+    });
+    // Force close after 5s if still hanging
+    setTimeout(() => process.exit(0), 5000).unref();
+  };
+
+  process.on('SIGTERM', shutdown);
+  process.on('SIGINT', shutdown);
 }
 
 startServer().catch((err) => {
