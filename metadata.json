@@ -1,0 +1,6 @@
+{
+  "name": "Audio Call",
+  "description": "Browser-based real-time audio calling requiring no account registration. Enter a name and select anyone online to start an instant voice call.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
